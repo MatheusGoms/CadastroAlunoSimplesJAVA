@@ -1,0 +1,74 @@
+
+package modelo;
+
+import java.io.Serializable;
+
+public class Aluno implements Serializable {
+    
+    private long id;
+    private String matricula;
+    private String nome;
+    private double nota01;
+    private double nota02;
+
+    public Aluno() {
+    }
+
+    public Aluno(long id, String matricula, String nome, double nota01, double nota02) {
+        this.id = id;
+        this.matricula = matricula;
+        this.nome = nome;
+        this.nota01 = nota01;
+        this.nota02 = nota02;
+    }
+
+    @Override
+    public String toString() {
+        return "ID: " + id + "\nMatricula: " + matricula 
+                + "\nNome: " + nome + "\n1ª nota: " + nota01 + "\n2ª nota: " + nota02;
+    }
+ 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public double getNota01() {
+        return nota01;
+    }
+
+    public void setNota01(double nota01) {
+        this.nota01 = nota01;
+    }
+
+    public double getNota02() {
+        return nota02;
+    }
+
+    public void setNota02(double nota02) {
+        this.nota02 = nota02;
+    }
+    
+    public double getMedia() {
+        return (nota01 + nota02) / 2;
+    }
+}
