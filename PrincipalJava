@@ -1,0 +1,59 @@
+package aplicacao;
+
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import modelo.Aluno;
+import persistencia.AlunoDAO;
+
+public class Principal {
+    public static void main(String[] args) {
+        Aluno aluno = new Aluno();
+        AlunoDAO aDAO = new AlunoDAO();
+        
+        // Carregar o objeto de aluno
+        aluno.setMatricula("12346");
+        aluno.setNome("Maria da Silva");
+        aluno.setNota01(7.3);
+        aluno.setNota02(9.7);
+        
+  
+        /*try {
+        // Insere(grava) o aluno no banco
+        aDAO.insereAluno(aluno);
+        System.out.println("Aluno gravado com sucesso.");
+        } catch (SQLException ex) {
+        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+
+        /*try {
+        // localiza o aluno no banco pela matricula
+        System.out.println(aDAO.getAlunoMatricula("12345"));
+        } catch (SQLException ex) {
+        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+
+        /*try {
+        // lista todos os alunos
+        for (Aluno a : aDAO.getAlunos()) {
+        System.out.println(a);                
+        }
+        } catch (SQLException ex) {
+        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        
+        /*try {
+        // atualiza o aluno
+            aDAO.atualizaAluno(new Aluno(1, "12345", "João da Silva", 5.3, 4.7));
+        } catch (SQLException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+        
+        try {
+            // excluí o aluno
+            aDAO.excluiAluno(1);
+        } catch (SQLException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
